@@ -8,6 +8,7 @@ public class Wall {
     private int length;
     private int height;
     private Texture texture;
+    private float restitution = 0.8f;
 
     public Wall(int positionX, int positionY, int length, int height) {
         this.positionX = positionX;
@@ -23,7 +24,7 @@ public class Wall {
     public int getLength() {
         return length;
     }
-    
+
     public int getPositionX() {
         return positionX;
     }
@@ -31,6 +32,8 @@ public class Wall {
     public int getPositionY() {
         return positionY;
     }
+
+    public float getRestitution() { return restitution; }
 
     public Texture getTexture() {
         return texture;

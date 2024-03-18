@@ -5,12 +5,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Ball {
-       
+
     private float x, y; // Position de la balle
     private float velocityX, velocityY; // Vitesse de la balle
     private static final float GRAVITY = 9.81f; // Constante de gravité
-    private float angle = 6.5f; // Angle d'inclinaison du plan en degrés
-    private float pixelToMeters = 462f;    //Paramètre à mettre dans le fichier des paramètres pour ne pas avoir à le coder en dur
+    private final float angle = 6.5f; // Angle d'inclinaison du plan en degrés
+    private final float pixelToMeters = 462f;    //Paramètre à mettre dans le fichier des paramètres pour ne pas avoir à le coder en dur
     private Texture balleTexture; // Image de la balle
     private int imageWidth, imageHeight; // Dimensions de l'image de la balle en pixels
     private float scaleX, scaleY; // Facteurs d'échelle pour redimensionner la balle
@@ -29,7 +29,7 @@ public class Ball {
     }
 
     public void update(float deltaTime) {
-        
+
         // Mettre à jour la vitesse en fonction de la gravité
         float angleRadians = (float) Math.toRadians(angle);
         velocityY -= GRAVITY * (float) Math.sin(angleRadians) * deltaTime;
@@ -39,13 +39,13 @@ public class Ball {
         y += velocityY * deltaTime * pixelToMeters;
 
         //Détecter la collision avec le bas de la fenêtre
-        if(y<0) {           
+        if(y<0) {
             y = 0;
 
         // Empêcher la balle de passer en dessous de la fenêtre
            velocityY=0;
         // Arrêter la balle lorsque la collision est détectée
-       
+
     }
 }
 
@@ -60,6 +60,14 @@ public class Ball {
 
     public float getVelocityX() {
         return velocityX;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public void setY(float y) {
+        this.y = y;
     }
 
     public float getVelocityY() {
@@ -81,7 +89,7 @@ public class Ball {
     //     scaleX = newScaleX;
     //     scaleY = newScaleY;
     // }
-    
+
 //     public void draw(SpriteBatch batch) {
 //         // Dessiner la balle en utilisant les facteurs d'échelle
 //         batch.draw(balleTexture, x, y, imageWidth * scaleX, imageHeight * scaleY);
