@@ -80,29 +80,7 @@ public class Ball {
         this.velocityY = velocityY;
     }
 
-    // public void resize (int windowWidth, int windowHeight) {
-    //     // Calculer les nouveaux facteurs d'échelle en fonction des dimensions de la fenêtre
-    //     float newScaleX = (float) windowWidth / (float) imageWidth;
-    //     float newScaleY = (float) windowHeight / (float) imageHeight;
 
-    //     // Appliquer les nouveaux facteurs d'échelle
-    //     scaleX = newScaleX;
-    //     scaleY = newScaleY;
-    // }
-
-//     public void draw(SpriteBatch batch) {
-//         // Dessiner la balle en utilisant les facteurs d'échelle
-//         batch.draw(balleTexture, x, y, imageWidth * scaleX, imageHeight * scaleY);
-//     }
-
-//     public void setWindowSize(float windowHeight) {
-//         // Par exemple, vous pouvez adapter pixelsToMeters en fonction de la nouvelle taille de la fenêtre
-//         float screenHeight = Gdx.graphics.getHeight();
-//         float flipperHeight = 1.3f;
-//         pixelToMeters = screenHeight / flipperHeight;
-
-
-//     }
 }
 
 
